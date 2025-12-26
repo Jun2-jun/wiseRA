@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>RA 게시판 UI 테스트</title>
+
+<style>
+/* ------------------------------
+   네이버 카페 Q&A 스타일 완전 복제
+--------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    background: #fff;
+}
+
+/* 전체 */
+.ra-board-wrap {
+    width: 100%;
+    max-width: 1050px;
+    margin: 25px auto;
+    color: #222;
+}
+
+/* 제목 */
+.ra-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* 상단바 */
+.ra-topbar {
+    background: #f7f9fa;
+    border: 1px solid #dcdcdc;
+    padding: 10px 12px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none;
+}
+
+.ra-topbar select {
+    padding: 5px 8px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* 테이블 */
+.ra-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-top: 2px solid #4c4c4c;
+}
+
+/* 테이블 헤더 */
+.ra-table th {
+    background: #fafafa;
+    padding: 9px 5px;
+    font-size: 13px;
+    border-bottom: 1px solid #e5e5e5;
+    color: #555;
+}
+
+/* 테이블 셀 */
+.ra-table td {
+    padding: 8px 5px;
+    font-size: 13px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 38px;
+}
+
+/* 제목만 왼쪽 */
+.ra-title-cell {
+    text-align: left !important;
+}
+
+/* hover 효과 */
+.ra-table tr:hover {
+    background: #f9f9f9;
+}
+
+/* 공지 배지 */
+.ra-notice-badge {
+    background: #ff7777;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* 게시글 없음 */
+.ra-no-post {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-size: 14px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* 하단 검색/글쓰기 바 */
+.ra-bottom-bar {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ra-bottom-bar select,
+.ra-bottom-bar input {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+}
+
+.ra-bottom-bar input {
+    width: 250px;
+}
+
+.ra-search-btn {
+    background: #03c75a;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+}
+
+.ra-write-btn-bottom {
+    margin-left: auto;
+    background: #03c75a;
+    color: #fff;
+    padding: 7px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ra-write-btn-bottom:hover {
+    background: #02ac4f;
+}
+
+/* 페이지네이션 */
+.ra-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.ra-pagination a {
+    margin: 0 4px;
+    color: #444;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.ra-pagination a.active {
+    font-weight: 700;
+    color: #03c75a;
+}
+</style>
+</head>
+
+<body>
+
+<div class="ra-board-wrap">
+
+    <div class="ra-title">★ 질문있어요!!</div>
+
+    <div class="ra-topbar">
+        <div>
+            <input type="checkbox" id="notice">
+            <label for="notice">공지 숨기기</label>
+        </div>
+
+        <select>
+            <option>15개씩</option>
+            <option>30개씩</option>
+            <option>50개씩</option>
+        </select>
+    </div>
+
+    <table class="ra-table">
+        <thead>
+            <tr>
+                <th style="width:85px;">말머리</th>
+                <th>제목</th>
+                <th style="width:130px;">작성자</th>
+                <th style="width:110px;">작성일</th>
+                <th style="width:70px;">조회수</th>
+                <th style="width:70px;">좋아요</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td colspan="6" class="ra-no-post">등록된 게시글이 없습니다.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="ra-pagination">
+        <a href="#" class="active">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">&gt;</a>
+    </div>
+
+    <div class="ra-bottom-bar">
+        <select>
+            <option>전체기간</option>
+            <option>1주</option>
+            <option>1개월</option>
+        </select>
+
+        <select>
+            <option>글 + 댓글</option>
+            <option>글만</option>
+        </select>
+
+        <input type="text" placeholder="검색어를 입력해주세요">
+        <button class="ra-search-btn">검색</button>
+
+        <a href="#" class="ra-write-btn-bottom">✎ 글쓰기</a>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* 기본 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard Variable", Pretendard, sans-serif;
+}
+
+.nav-menu-wrapper {
+  background: #fff;
+  padding: 20px 40px;
+}
+
+.mainmenu ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.mainmenu ul li {
+  position: relative;
+}
+
+.mainmenu ul li a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  padding: 8px 0;
+  display: inline-block;
+}
+
+/* =========================
+   Sub Menu (Mega Menu)
+========================= */
+.nav-menu-wrapper .mainmenu li ul.sub-menu {
+  position: absolute;
+  left: 0;                 /* 🔥 Category 왼쪽 기준 */
+  top: calc(100% + 12px);
+
+  /* ❌ translateX(-50%) 제거 */
+  transform: translateY(-15px);  /* 기존 모션 유지 */
+
+  min-width: 760px;
+  max-width: 900px;
+
+  display: grid;
+  grid-template-columns: repeat(6, minmax(90px, 0.5fr));
+  gap: 18px 22px;
+
+  padding: 22px 28px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: all 0.25s ease;
+  z-index: 999;
+}
+
+/* hover 시 표시 */
+.mainmenu li.menu-item-has-children:hover > ul.sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);   /* 🔥 스르륵 내려오는 느낌 그대로 */
+  pointer-events: auto;
+}
+
+.mainmenu li.menu-item-has-children::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 20px;   /* 마우스가 지나갈 다리 */
+}
+
+
+/* sub-menu item */
+.mainmenu li ul.sub-menu li {
+  width: 120px;
+}
+
+.mainmenu li ul.sub-menu li a {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.mainmenu li ul.sub-menu li a:hover {
+  color: #2563eb;
+  font-weight: 600;
+}
