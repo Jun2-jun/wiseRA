@@ -25,15 +25,15 @@
 <section class="hero">
   <div class="hero-banner">
     <div class="hero-content">
-      <div class="hero-meta">This Month’s Insight</div>
-      <span class="badge ce">EU CE</span>
+      <div class="hero-meta">CE Main Insight</div>
+      <span class="badge ce">CE</span>
 
-      <h1>CE MDR Article 10:<br>Manufacturer Obligations</h1>
+      <h1>CE 제10조<br>제조업체 의무 가이드</h1>
 
-      <p>Understanding CE MDR’s Article 10 for medical device manufacturers</p>
+      <p>의료기기 제조업체가 반드시 이해해야 할 CE 핵심 요구사항 정리</p>
 
       <div class="hero-actions">
-        <a href="#" class="btn-primary">Read More</a>
+        <a href="#" class="btn-primary">가이드 보기</a>
       </div>
 
     </div>
@@ -48,11 +48,11 @@
       <ul>
 
         <li class="menu-item">
-          <a href="#" class="active">모든글</a>
+          <a href="#">모든글</a>
         </li>
 
         <li class="menu-item menu-item-has-children">
-          <a href="#">가이드안내</a>
+          <a href="#" class="active">가이드안내</a>
 
           <ul class="sub-menu">
             <li class="menu-item"><a href="#">한국 MFDS</a></li>
@@ -80,20 +80,33 @@
     </nav>
   </div>
 
-  <div class="content-search">
-    <input type="text" placeholder="Search articles..." />
-  </div>
+    <div class="content-search search-pill">
+      <input
+        type="text"
+        placeholder="검색어를 입력해주세요."
+      />
 
+      <!-- 여기 -->
+      <button class="search-btn" aria-label="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <circle cx="11" cy="11" r="7"
+                  stroke="currentColor" stroke-width="2"/>
+          <line x1="16.65" y1="16.65"
+                x2="22" y2="22"
+                stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </div>
 </div>
 
 
-<!-- ✅ 카드 섹션만 교체 -->
+<!-- 카드 섹션 -->
 <section class="post-layout">
 
   <!-- BIG -->
   <article class="big-card">
     <div>
-      <span class="badge">EU CE</span>
+      <span class="badge">CE</span>
       <h3>Understanding UDI Requirements in Europe</h3>
       <p>
         Key UDI obligations under EU MDR and practical implementation
@@ -107,7 +120,7 @@
   <article class="small-card">
     <div class="small-thumb"></div>
     <div>
-      <span class="badge">EU CE</span>
+      <span class="badge">Project Review</span>
       <h4>Understanding UDI Requirements in Europe</h4>
       <div class="small-date">WiseRA · Regulatory Guide · 2025.12</div>
     </div>
@@ -125,7 +138,7 @@
   <!-- BIG -->
   <article class="big-card">
     <div>
-      <span class="badge">EU CE</span>
+      <span class="badge">CE</span>
       <h3>CE MDR Article 10: Manufacturer Obligations</h3>
       <p>
         A practical breakdown of Article 10 responsibilities, documentation
@@ -139,7 +152,7 @@
   <article class="small-card">
     <div class="small-thumb"></div>
     <div>
-      <span class="badge">Cybersecurity</span>
+      <span class="badge">Project Review</span>
       <h4>IEC 81001-5-1 Cybersecurity Gap Analysis</h4>
       <div class="small-date">WiseRA · Cybersecurity · 2025.11</div>
     </div>
@@ -148,7 +161,7 @@
   <article class="small-card">
     <div class="small-thumb"></div>
     <div>
-      <span class="badge">Regulatory</span>
+      <span class="badge">Project Review</span>
       <h4>Post-Market Surveillance (PMS) Best Practices</h4>
       <div class="small-date">WiseRA · Regulatory Guide · 2025.11</div>
     </div>
@@ -157,9 +170,6 @@
   
 </section>
 
-<!-- =========================
-     Report / Blog List Section
-========================= -->
 <section class="report-section">
 
   <h2 class="report-section-title">최신 리포트 & 인사이트</h2>
@@ -169,10 +179,8 @@
     <article class="report-card">
       <div class="report-thumb"></div>
       <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Trend</span>
-          <span class="tag gray">Malware</span>
-        </div>
+
+        <span class="badge ce">CE</span>
 
         <h3 class="report-title">
           November 2025 Infostealer Threat Intelligence Report
@@ -191,11 +199,8 @@
     <article class="report-card">
       <div class="report-thumb"></div>
       <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Dark Web</span>
-          <span class="tag blue">Trend</span>
-          <span class="tag gray">Ransomware</span>
-        </div>
+
+        <span class="badge ce">CE</span>
 
         <h3 class="report-title">
           November 2025 Ransomware Activity Overview
@@ -214,10 +219,8 @@
     <article class="report-card">
       <div class="report-thumb"></div>
       <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Finance</span>
-          <span class="tag gray">Phishing</span>
-        </div>
+
+        <span class="badge ce">CE</span>
 
         <h3 class="report-title">
           Cybersecurity Incidents Affecting the Financial Sector in Korea
@@ -233,77 +236,11 @@
       </div>
     </article>
 
-        <article class="report-card">
-      <div class="report-thumb"></div>
-      <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Dark Web</span>
-          <span class="tag blue">Trend</span>
-          <span class="tag gray">Ransomware</span>
-        </div>
-
-        <h3 class="report-title">
-          November 2025 Ransomware Activity Overview
-        </h3>
-
-        <p class="report-excerpt">
-          An overview of confirmed ransomware incidents in November 2025,
-          highlighting affected sectors, leak site activity,
-          and notable threat actor behavior.
-        </p>
-
-        <span class="report-date">December 16, 2025</span>
-      </div>
-    </article>
-
-        <article class="report-card">
-      <div class="report-thumb"></div>
-      <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Dark Web</span>
-          <span class="tag blue">Trend</span>
-          <span class="tag gray">Ransomware</span>
-        </div>
-
-        <h3 class="report-title">
-          November 2025 Ransomware Activity Overview
-        </h3>
-
-        <p class="report-excerpt">
-          An overview of confirmed ransomware incidents in November 2025,
-          highlighting affected sectors, leak site activity,
-          and notable threat actor behavior.
-        </p>
-
-        <span class="report-date">December 16, 2025</span>
-      </div>
-    </article>
-
-        <article class="report-card">
-      <div class="report-thumb"></div>
-      <div class="report-body">
-        <div class="report-tags">
-          <span class="tag blue">Dark Web</span>
-          <span class="tag blue">Trend</span>
-          <span class="tag gray">Ransomware</span>
-        </div>
-
-        <h3 class="report-title">
-          November 2025 Ransomware Activity Overview
-        </h3>
-
-        <p class="report-excerpt">
-          An overview of confirmed ransomware incidents in November 2025,
-          highlighting affected sectors, leak site activity,
-          and notable threat actor behavior.
-        </p>
-
-        <span class="report-date">December 16, 2025</span>
-      </div>
-    </article>
-
   </div>
 </section>
+
+
+
   <!-- Pagination -->
   <nav class="pagination">
     <a href="#" class="page-btn prev disabled">이전</a>
@@ -318,7 +255,7 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    © 2025 Wise Company · Regulatory & Cybersecurity Advisory
+    © 2025 Wise Company · Regulatory
   </div>
 </footer>
 

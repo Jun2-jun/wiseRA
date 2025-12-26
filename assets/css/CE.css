@@ -43,7 +43,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================
-   HERO (기업용 배너)
+   HERO (배너)
 ========================= */
 .hero {
   max-width: 1200px;
@@ -56,7 +56,7 @@ a { text-decoration: none; color: inherit; }
   height: 340px;
   border-radius: 18px;
   overflow: hidden;
-  background-image: url("./MD.png");
+  background-image: url("../img/MD.png");
   background-size: cover;
   background-position: right center;
 }
@@ -92,16 +92,18 @@ a { text-decoration: none; color: inherit; }
    Badge (아이보리 톤 통일)
 ========================= */
 .badge {
-  display: inline-block;
+  display: inline-block !important;
+  width: auto !important;
   padding: 4px 10px;
   font-size: 11px;
   font-weight: 600;
   border-radius: 999px;
-  background: #f4f1ec; /* 아이보리 */
-  color: #7a5c2e;      /* 웜 브라운 */
+  background: #f4f1ec;
+  color: #7a5c2e;
   margin-bottom: 14px;
-  
+  align-self: flex-start;
 }
+
 .badge.ce { background: #f4f1ec; color: #7a5c2e; }
 
 .hero-content h1 {
@@ -151,7 +153,7 @@ a { text-decoration: none; color: inherit; }
 ========================= */
 .post-layout {
   max-width: 1200px;
-  margin: 0 auto 80px;
+  margin: 0 auto 32px;
   padding: 0 24px;
 
   display: grid;
@@ -393,7 +395,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 .mainmenu li {
-  position: relative; /* ⭐ 기준점 (필수) */
+  position: relative; /* 기준점 (필수) */
 }
 
 .mainmenu li a {
@@ -403,6 +405,7 @@ a { text-decoration: none; color: inherit; }
   text-decoration: none;
   padding: 8px 0;
   display: inline-block;
+  transform: translateY(6px); /* ⭐ 여기 */
 }
 
 .mainmenu li a.active {
@@ -476,50 +479,13 @@ a { text-decoration: none; color: inherit; }
 ========================= */
 .content-nav {
   max-width: 1200px;
-  margin: 0 auto 32px;
+  margin: 0 auto 16px;
   padding: 0 24px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #e5e7eb;
-}
-
-/* =========================
-   Main Menu
-========================= */
-.nav-menu-wrapper {
-  background: transparent;
-}
-
-.mainmenu ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.mainmenu li {
-  position: relative; /* 드롭다운 기준점 */
-}
-
-.mainmenu li a {
-  font-size: 14px;
-  font-weight: 500;
-  color: #6b7280;
-  text-decoration: none;
-  padding: 10px 0;
-  display: inline-block;
-}
-
-.mainmenu li a.active {
-  color: #111827;
-  font-weight: 600;
-  border-bottom: 2px solid #2563eb;
-}
-
-.mainmenu li a:hover {
-  color: #111827;
 }
 
 /* =========================
@@ -583,27 +549,64 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* =========================
-   Search
+   Search Pill Style
 ========================= */
-.content-search input {
-  width: 220px;
-  padding: 8px 14px;
-  font-size: 13px;
-  border-radius: 999px;
+.search-pill {
+  display: flex;
+  align-items: center;
+
+  width: 280px;
+  height: 42px;
+
+  background: #f9fafb;
   border: 1px solid #e5e7eb;
-  background: #ffffff;
+  border-radius: 999px;
+
+  padding: 0 6px 0 16px;
+  transition: all 0.25s ease;
+  transform: translateY(6px); 
+}
+
+/* input */
+.search-pill input {
+  flex: 1;
+  border: none;
+  background: transparent;
+
+  font-size: 13px;
   color: #1f2937;
 }
 
-.content-search input::placeholder {
+.search-pill input::placeholder {
   color: #9ca3af;
 }
 
-.content-search input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+.search-pill input:focus {
   outline: none;
 }
+
+/* 검색 버튼 */
+.search-btn {
+  width: 30px;
+  height: 30px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #6b7280;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* focus 상태 (input 기준) */
+.search-pill:focus-within {
+  background: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 6px 18px rgba(37,99,235,0.15);
+}
+
 
 /* =========================
    Pagination
